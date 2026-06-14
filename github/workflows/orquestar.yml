@@ -1,0 +1,34 @@
+name: UTSF-MFC Orquestador
+
+on:
+  workflow_dispatch:
+
+jobs:
+  orquestar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Instalar dependencias
+        run: pip install requests
+      - name: Ejecutar orquestador
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python orquestador.py
+      - name: Commit automático de ESTADO.md
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ESTADO.md
+          if git diff --cached --quiet; then
+            echo "ℹ️ No hay cambios en ESTADO.md"
+          else
+            git commit -m "🧠 UTSF-MFC: Actualización automática de ESTADO.md"
+            git push
+          fi
