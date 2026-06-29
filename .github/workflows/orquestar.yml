@@ -1,0 +1,42 @@
+name: UTSF-MFC v8.8.8 – Orquestador Multi-IA
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  orquestar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # ✅ Permiso necesario para git push
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+      QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
+      COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+      GEMINI_PRIVATE_KEY: ${{ secrets.GEMINI_PRIVATE_KEY }}
+      GEMINI_CLIENT_EMAIL: ${{ secrets.GEMINI_CLIENT_EMAIL }}
+      GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias
+        run: |
+          pip install requests numpy PyJWT
+      - name: Ejecutar Orquestador
+        run: python orquestador.py
+      - name: Commit ESTADO.md
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ESTADO.md metricas.jsonl
+          git diff --cached --quiet || git commit -m "🔄 Ciclo automático UTSF-MFC v8.8.8 – $(date -u +%Y%m%d_%H%M)"
+          git push
