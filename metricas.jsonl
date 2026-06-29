@@ -7,3 +7,14 @@
 {"ciclo": "20260629_060417", "fase": "api", "ia": "Groq", "latencia_ms": 2460, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T06:05:10.711004"}
 {"ciclo": "20260629_060417", "fase": "api", "ia": "Qwen", "latencia_ms": 653, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-29T06:05:11.365210"}
 {"ciclo": "20260629_060417", "fase": "api", "ia": "Groq", "latencia_ms": 1948, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T06:05:13.314820"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Mistral", "latencia_ms": 60117, "exito": false, "error_tipo": "TIMEOUT", "timestamp": "2026-06-29T15:59:08.213296"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Qwen", "latencia_ms": 1069, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-29T15:59:09.283220"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Groq", "latencia_ms": 2818, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T15:59:12.102810"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "DeepSeek", "latencia_ms": 754, "exito": false, "error_tipo": "HTTP_402", "timestamp": "2026-06-29T15:59:12.858917"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Qwen", "latencia_ms": 815, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-29T15:59:13.675781"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Groq", "latencia_ms": 1743, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T15:59:15.420369"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "DeepSeek", "latencia_ms": 686, "exito": false, "error_tipo": "HTTP_402", "timestamp": "2026-06-29T15:59:16.108024"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Qwen", "latencia_ms": 807, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-29T15:59:16.916542"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Groq", "latencia_ms": 1911, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T15:59:18.829120"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Qwen", "latencia_ms": 807, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-29T15:59:19.638021"}
+{"ciclo": "20260629_155805", "fase": "api", "ia": "Groq", "latencia_ms": 2199, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T15:59:21.838482"}
