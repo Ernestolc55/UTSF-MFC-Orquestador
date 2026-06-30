@@ -27,3 +27,12 @@
 {"ciclo": "20260629_200755", "fase": "api", "ia": "Groq", "latencia_ms": 2324, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T20:08:45.167852"}
 {"ciclo": "20260629_200755", "fase": "api", "ia": "Qwen", "latencia_ms": 765, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-29T20:08:45.934360"}
 {"ciclo": "20260629_200755", "fase": "api", "ia": "Groq", "latencia_ms": 2117, "exito": true, "error_tipo": "", "timestamp": "2026-06-29T20:08:48.053120"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "Mistral", "latencia_ms": 42041, "exito": true, "error_tipo": "", "timestamp": "2026-06-30T04:10:10.691760"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "DeepSeek", "latencia_ms": 629, "exito": false, "error_tipo": "HTTP_402", "timestamp": "2026-06-30T04:10:11.322105"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "Qwen", "latencia_ms": 1023, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-30T04:10:12.346545"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "Groq", "latencia_ms": 3085, "exito": true, "error_tipo": "", "timestamp": "2026-06-30T04:10:15.433340"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "DeepSeek", "latencia_ms": 630, "exito": false, "error_tipo": "HTTP_402", "timestamp": "2026-06-30T04:10:16.065114"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "Qwen", "latencia_ms": 744, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-30T04:10:16.810302"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "Groq", "latencia_ms": 2752, "exito": true, "error_tipo": "", "timestamp": "2026-06-30T04:10:19.563453"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "Qwen", "latencia_ms": 747, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-06-30T04:10:20.311715"}
+{"ciclo": "20260630_040926", "fase": "api", "ia": "Groq", "latencia_ms": 1779, "exito": true, "error_tipo": "", "timestamp": "2026-06-30T04:10:22.092069"}
