@@ -85,3 +85,14 @@
 {"ciclo": "20260701_100106", "fase": "api", "ia": "Groq", "latencia_ms": 2189, "exito": true, "error_tipo": "", "timestamp": "2026-07-01T10:02:21.078788"}
 {"ciclo": "20260701_100106", "fase": "api", "ia": "Qwen", "latencia_ms": 647, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-07-01T10:02:21.727597"}
 {"ciclo": "20260701_100106", "fase": "api", "ia": "Groq", "latencia_ms": 100, "exito": false, "error_tipo": "RATE_LIMIT", "timestamp": "2026-07-01T10:02:21.829282"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Mistral", "latencia_ms": 60218, "exito": false, "error_tipo": "TIMEOUT", "timestamp": "2026-07-01T14:50:31.958060"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Qwen", "latencia_ms": 1080, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-07-01T14:50:33.038377"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Groq", "latencia_ms": 4832, "exito": true, "error_tipo": "", "timestamp": "2026-07-01T14:50:37.871575"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "DeepSeek", "latencia_ms": 783, "exito": false, "error_tipo": "HTTP_402", "timestamp": "2026-07-01T14:50:38.656400"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Qwen", "latencia_ms": 831, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-07-01T14:50:39.489136"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Groq", "latencia_ms": 2553, "exito": true, "error_tipo": "", "timestamp": "2026-07-01T14:50:42.043607"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "DeepSeek", "latencia_ms": 694, "exito": false, "error_tipo": "HTTP_402", "timestamp": "2026-07-01T14:50:42.739650"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Qwen", "latencia_ms": 816, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-07-01T14:50:43.557507"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Groq", "latencia_ms": 2602, "exito": true, "error_tipo": "", "timestamp": "2026-07-01T14:50:46.161577"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Qwen", "latencia_ms": 821, "exito": false, "error_tipo": "HTTP_401", "timestamp": "2026-07-01T14:50:46.984295"}
+{"ciclo": "20260701_144929", "fase": "api", "ia": "Groq", "latencia_ms": 119, "exito": false, "error_tipo": "RATE_LIMIT", "timestamp": "2026-07-01T14:50:47.104443"}
