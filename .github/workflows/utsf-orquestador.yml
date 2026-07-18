@@ -1,0 +1,68 @@
+name: UTSF-MFC Orquestador v4.7.2
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Cada 6 horas
+  workflow_dispatch:        # Ejecución manual
+
+permissions:
+  contents: write           # ← CLAVE: permite git push
+
+jobs:
+  orquestar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install Dependencies
+        run: pip install requests aiohttp
+      
+      - name: DEBUG Verificar secrets cargados
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          echo "=== VERIFICACIÓN DE SECRETS ==="
+          echo "GROQ_API_KEY: ${GROQ_API_KEY:+✅ Cargada (${#GROQ_API_KEY} chars)}${GROQ_API_KEY:-❌ NO CARGADA}"
+          echo "MISTRAL_API_KEY: ${MISTRAL_API_KEY:+✅ Cargada (${#MISTRAL_API_KEY} chars)}${MISTRAL_API_KEY:-❌ NO CARGADA}"
+          echo "COHERE_API_KEY: ${COHERE_API_KEY:+✅ Cargada (${#COHERE_API_KEY} chars)}${COHERE_API_KEY:-❌ NO CARGADA}"
+          echo "GOOGLE_API_KEY: ${GOOGLE_API_KEY:+✅ Cargada (${#GOOGLE_API_KEY} chars)}${GOOGLE_API_KEY:-❌ NO CARGADA}"
+          echo "QWEN_API_KEY: ${QWEN_API_KEY:+✅ Cargada (${#QWEN_API_KEY} chars)}${QWEN_API_KEY:-❌ NO CARGADA}"
+          echo "OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:+✅ Cargada (${#OPENROUTER_API_KEY} chars)}${OPENROUTER_API_KEY:-❌ NO CARGADA}"
+          echo "================================"
+      
+      - name: Run Orquestador
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DEBUG: 1
+        run: python orquestador_v472.py
+      
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "UTSF Bot"
+          git config user.email "bot@utsf-mfc.org"
+          git add respuestas/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Ciclo v4.7.2 $(date -u +%Y-%m-%d-%H:%M)"
+          git push
